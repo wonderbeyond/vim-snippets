@@ -480,6 +480,18 @@ snippet from "from module import name" b
 from ${1:module} import ${2:Stuff}
 endsnippet
 
+snippet @ "function decorator" bs
+from functools import wraps
+def ${1:decorator_name}(func):
+	@wraps(func)
+	def ${2:newfunc}(*args, **kwargs):
+		${3:#do extra things}
+		${4:return} ${5:func(*args, **kwargs)}
+
+	return $2
+${6}
+endsnippet
+
 
 ##############
 # PROPERTIES #
